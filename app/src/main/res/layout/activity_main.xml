@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_percent="0.5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="292dp"
+        app:layout_constraintGuide_percent="0.60" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_male"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/custom_card"
+        android:onClick="modifyGender"
+        android:src="@drawable/ic_male"
+        app:layout_constraintBottom_toTopOf="@id/guideline4"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_male_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="male"
+        android:textColor="@color/grey"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imgBtn_male"
+        app:layout_constraintEnd_toEndOf="@+id/imgBtn_male"
+        app:layout_constraintStart_toStartOf="@+id/imgBtn_male" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_female"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="10dp"
+        android:alpha="0.5"
+        android:background="@drawable/custom_card"
+        android:onClick="modifyGender"
+        android:src="@drawable/ic_female"
+        app:layout_constraintBottom_toTopOf="@id/guideline4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_male_label2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="female"
+        android:textColor="@color/grey"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imgBtn_female"
+        app:layout_constraintEnd_toEndOf="@+id/imgBtn_female"
+        app:layout_constraintStart_toStartOf="@+id/guideline" />
+
+    <ImageView
+        android:id="@+id/card_height"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/custom_card"
+        android:backgroundTint="@color/card_color"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline4" />
+
+    <SeekBar
+        android:id="@+id/seekbar_height"
+        style="@android:style/Widget.Material.SeekBar"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:progress="0"
+        android:progressBackgroundTint="@color/white"
+        android:progressBackgroundTintMode="add"
+        android:progressTint="@color/white"
+        android:splitTrack="false"
+        android:thumb="@drawable/custom_thumb"
+        app:layout_constraintBottom_toBottomOf="@+id/card_height"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_height_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="height"
+        android:textColor="@color/grey"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/card_height"
+        app:layout_constraintStart_toStartOf="@+id/card_height"
+        app:layout_constraintTop_toTopOf="@+id/card_height" />
+
+    <TextView
+        android:id="@+id/txt_height"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/archivo_black"
+        android:text="100"
+        android:textColor="@color/white"
+        android:textSize="72sp"
+        app:layout_constraintBottom_toTopOf="@+id/seekbar_height"
+        app:layout_constraintEnd_toEndOf="@+id/card_height"
+        app:layout_constraintStart_toStartOf="@+id/card_height"
+        app:layout_constraintTop_toBottomOf="@+id/txt_height_label" />
+
+    <TextView
+        android:id="@+id/txt_height_cm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="sans-serif-black"
+        android:text="cm"
+        android:textColor="@color/grey"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/seekbar_height"
+        app:layout_constraintEnd_toEndOf="@+id/card_height"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/txt_height" />
+
+    <Button
+        android:id="@+id/btn_calculate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/pink"
+        android:fontFamily="sans-serif-medium"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Calculate Your BMI"
+        android:textSize="16sp"
+        android:onClick="calculateBMI"
+        app:iconPadding="0sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/card_weight"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="20dp"
+        android:alpha="0.7"
+        android:background="@drawable/custom_card"
+        android:backgroundTint="@color/card_color"
+        app:layout_constraintBottom_toTopOf="@+id/btn_calculate"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+    <Button
+        android:id="@+id/btn_weight_minus"
+        android:layout_width="55sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:backgroundTint="@color/card_color"
+        android:elevation="4dp"
+        android:fontFamily="@font/aldrich"
+        android:onClick="modifyWeight"
+        android:text="-"
+        android:textSize="28sp"
+        app:cornerRadius="100dp"
+        app:iconGravity="textEnd"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/card_weight"
+        app:layout_constraintStart_toStartOf="@+id/card_weight"
+        app:layout_constraintTop_toBottomOf="@+id/txt_weight" />
+
+    <Button
+        android:id="@+id/btn_weight_plus"
+        android:layout_width="55sp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:backgroundTint="@color/card_color"
+        android:elevation="4dp"
+        android:fontFamily="@font/aldrich"
+        android:onClick="modifyWeight"
+        android:text="+"
+        android:textSize="28sp"
+        app:cornerRadius="100dp"
+        app:iconGravity="textEnd"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/card_weight"
+        app:layout_constraintEnd_toEndOf="@+id/card_weight"
+        app:layout_constraintTop_toBottomOf="@+id/txt_weight" />
+
+    <TextView
+        android:id="@+id/txt_weight_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="weight"
+        android:textColor="@color/grey"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/card_weight"
+        app:layout_constraintStart_toStartOf="@+id/card_weight"
+        app:layout_constraintTop_toTopOf="@+id/card_weight" />
+
+    <TextView
+        android:id="@+id/txt_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/archivo_black"
+        android:text="40"
+        android:textColor="@color/white"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="@+id/card_weight"
+        app:layout_constraintStart_toStartOf="@+id/card_weight"
+        app:layout_constraintTop_toBottomOf="@+id/txt_weight_label" />
+
+    <ImageView
+        android:id="@+id/card_age"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="20dp"
+        android:alpha="0.7"
+        android:background="@drawable/custom_card"
+        android:backgroundTint="@color/card_color"
+        app:layout_constraintBottom_toTopOf="@+id/btn_calculate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+    <Button
+        android:id="@+id/btn_age_minus"
+        android:layout_width="55sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:backgroundTint="@color/card_color"
+        android:elevation="4dp"
+        android:fontFamily="@font/aldrich"
+        android:onClick="modifyAge"
+        android:text="-"
+        android:textSize="28sp"
+        app:cornerRadius="100dp"
+        app:iconGravity="textEnd"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/card_age"
+        app:layout_constraintStart_toStartOf="@+id/card_age"
+        app:layout_constraintTop_toBottomOf="@+id/txt_age" />
+
+    <Button
+        android:id="@+id/btn_age_plus"
+        android:layout_width="55sp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:backgroundTint="@color/card_color"
+        android:elevation="4dp"
+        android:fontFamily="@font/aldrich"
+        android:onClick="modifyAge"
+        android:text="+"
+        android:textSize="28sp"
+        app:cornerRadius="100dp"
+        app:iconGravity="textEnd"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/card_age"
+        app:layout_constraintEnd_toEndOf="@+id/card_age"
+        app:layout_constraintTop_toBottomOf="@+id/txt_age" />
+
+    <TextView
+        android:id="@+id/txt_age_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="age"
+        android:textColor="@color/grey"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/card_age"
+        app:layout_constraintStart_toStartOf="@+id/card_age"
+        app:layout_constraintTop_toTopOf="@+id/card_age" />
+
+    <TextView
+        android:id="@+id/txt_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/archivo_black"
+        android:text="15"
+        android:textColor="@color/white"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="@+id/card_age"
+        app:layout_constraintStart_toStartOf="@+id/card_age"
+        app:layout_constraintTop_toBottomOf="@+id/txt_age_label" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="186dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
